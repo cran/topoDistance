@@ -4,10 +4,24 @@
 \alias{topoPathMap}
 \title{Map of topographic paths}
 \usage{
-topoPathMap(DEM, pts, topoPaths, type = "hillshade",
-  costSurface = NULL, costColors = NULL, pathWidth = 2,
-  pathColor = "darkred", alpha = 0.65, angle = 45, direction = 0,
-  cex = 2, bg = "gray", col = "black", pch = 21, ...)
+topoPathMap(
+  DEM,
+  pts,
+  topoPaths,
+  type = "hillshade",
+  costSurface = NULL,
+  costColors = NULL,
+  pathWidth = 2,
+  pathColor = "darkred",
+  alpha = 0.65,
+  angle = 45,
+  direction = 0,
+  cex = 2,
+  bg = "gray",
+  col = "black",
+  pch = 21,
+  ...
+)
 }
 \arguments{
 \item{DEM}{A RasterLayer for digital elevation model (DEM) data.}

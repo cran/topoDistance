@@ -4,7 +4,9 @@
 \name{Yosemite}
 \alias{Yosemite}
 \title{Spatial data for western fence lizards in Yosemite}
-\format{A RasterStack}
+\format{
+A RasterStack
+}
 \usage{
 data(Yosemite)
 }

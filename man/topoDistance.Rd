@@ -3,7 +3,6 @@
 \docType{package}
 \name{topoDistance}
 \alias{topoDistance}
-\alias{topoDistance-package}
 \title{topoDistance: A package for calculating topographic paths and distances}
 \description{
 The topoDistance package provides functions for calculating topographic distances and

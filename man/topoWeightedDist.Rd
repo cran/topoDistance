@@ -4,8 +4,14 @@
 \alias{topoWeightedDist}
 \title{Weighted topographic distances and paths}
 \usage{
-topoWeightedDist(DEM, pts, directions = 8, paths = FALSE,
-  hFunction = NULL, vFunction = NULL)
+topoWeightedDist(
+  DEM,
+  pts,
+  directions = 8,
+  paths = FALSE,
+  hFunction = NULL,
+  vFunction = NULL
+)
 }
 \arguments{
 \item{DEM}{A RasterLayer for digital elevation model (DEM) data; should be in a projected coordinate system.}

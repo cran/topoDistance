@@ -4,8 +4,7 @@
 \alias{topoLCP}
 \title{Topographic least cost paths and distances}
 \usage{
-topoLCP(DEM, costSurface, pts, directions = 8, paths = FALSE,
-  zweight = 1)
+topoLCP(DEM, costSurface, pts, directions = 8, paths = FALSE, zweight = 1)
 }
 \arguments{
 \item{DEM}{A RasterLayer for digital elevation model (DEM) data.}

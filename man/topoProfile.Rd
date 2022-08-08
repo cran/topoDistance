@@ -4,9 +4,17 @@
 \alias{topoProfile}
 \title{Elevation profiles of topographic paths}
 \usage{
-topoProfile(DEM, topoPaths, pts = 100, type = "base",
-  singlePlot = FALSE, rows = NULL, cols = NULL, limits = NULL,
-  legendx = "bottomright")
+topoProfile(
+  DEM,
+  topoPaths,
+  pts = 100,
+  type = "base",
+  singlePlot = FALSE,
+  rows = NULL,
+  cols = NULL,
+  limits = NULL,
+  legendx = "bottomright"
+)
 }
 \arguments{
 \item{DEM}{A RasterLayer for digital elevation model (DEM) data.}

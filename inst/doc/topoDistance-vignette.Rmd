@@ -28,6 +28,9 @@ The topoDistance package provides functions for calculating topographic distance
 
 Identifying topographic paths and calculating topographic distances is valuable for a variety of disciplines, from landscape genetics to community ecology.  For example, topographic distances have been shown to correlate strongly with genetic distances (e.g. Goldberg & Waits, 2010; Murphy et al., 2010; Wang & Shaffer, 2017) and with differences in community composition (e.g. Cañedo-Argüelles et al., 2015; Dong et al., 2016; Glassman, et al., 2017) in a variety of systems.  
 
+To cite topoDistance in publications, please use:
+Wang I.J. (2020) Topographic path analysis for modeling dispersal and functional connectivity: calculating topographic distances using the topoDistance R package. Methods in Ecology and Evolution, 11:265-272.
+
 ## Calculating Topographic Distances
 Identifying shortest topographic paths and calculating topographic distances is straightforward with the topoDist() function.  All that is required is an elevation raster (DEM) and a set of geographic points.  The topoDistance package contains a raster dataset that includes a DEM for part of Yosemite National Park.  We can start by loading the data and plotting the DEM.
 ```{r}
@@ -51,7 +54,15 @@ To calculate the shortest topographic distances, we only need to specify the DEM
 tdist <- topoDist(Yosemite$DEM, xy, paths = TRUE)
 tdist
 ```
-When paths = TRUE, topoDist() returns a list that contains [[1]] the matrix of pairwise topographic distances between points (in meters or projection units, depending on the coordinate reference system) and [[2]] a SpatialLines object containing the shortest topographic paths.  Whe paths = FALSE, topoDist() only returns the matrix of topographic distances.
+When paths = TRUE, topoDist() returns a list that contains [[1]] the matrix of pairwise topographic distances between points (in meters or projection units, depending on the coordinate reference system) and [[2]] a SpatialLines object containing the shortest topographic paths.  When paths = FALSE, topoDist() only returns the matrix of topographic distances.
+
+The objects returned by topoDist() can be used in downstream applications or operated on by a variety of functions.  For example, if you wish to impose a maximum distance (e.g. because of dispersal limitation), then you can simple replace the values greater than the maximum in the distance matrix with NA.  
+```{r}
+td.mat <- tdist[[1]]
+td.mat[td.mat > 8000] <- NA
+td.mat
+```
+
 
 ## Mapping Topographic Paths
 We can map where the shortest topographic paths are on the landscape by using the topoPathMap() function.
@@ -99,7 +110,7 @@ topoProfile(Yosemite$DEM, topoPaths = tLCP, pts = 1000,
 ### References
 Cañedo‐Argüelles, M., Boersma, K. S., Bogan, M. T., Olden, J. D., Phillipsen, I., Schriever, T. A., & Lytle, D. A. (2015). Dispersal strength determines meta‐community structure in a dendritic riverine network. Journal of Biogeography, 42(4), 778–790. 
 
-Csardi G., & Nepusz T. (2006). The igraph software package for complex network research, International Journal of Complex Systems, 1695. http://igraph.org
+Csardi G., & Nepusz T. (2006). The igraph software package for complex network research, International Journal of Complex Systems, 1695. https://igraph.org
 
 Dong, X., Li, B., He, F., Gu, Y., Sun, M., Zhang, H., Tan, L., Xiao, W., Liu, S., & Cai, Q. (2016). Flow directionality, mountain barriers and functional traits determine diatom metacommunity structuring of high mountain streams. Scientific Reports, 6, 24711. 
 
